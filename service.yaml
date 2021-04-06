@@ -6,7 +6,7 @@ spec:
   selector:
     app: echo-app
   ports:
-  - name: "HTTP" 
+  - name: "http" 
     port: 8080
-  - name: "HTTPS"
+  - name: "https"
     port: 8443
