@@ -1,17 +1,15 @@
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: echo-ingress
-  labels:
-      name: echo-ingress
 spec:
   rules:
-  - host: "ingress.local"
-    http:
+  - http:
       paths:
-      - pathType: Prefix
-        path: "/"
+      - path: /echo
+        pathType: Prefix
         backend:
           service:
-            serviceName: echo-service
-            servicePort: 8080
+            name: echo-service
+            port:
+              number: 8080
